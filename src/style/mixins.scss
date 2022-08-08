@@ -1,0 +1,38 @@
+@mixin breakpoint-xs {
+  @media (max-width: 599px) { @content; }
+}
+@mixin breakpoint-sm {
+  @media (min-width: 600px) { @content; }
+}
+@mixin breakpoint-md {
+  @media (min-width: 900px) { @content; }
+}
+@mixin breakpoint-lg {
+  @media (min-width: 1200px) { @content; }
+}
+
+
+.cmp-full-height {
+  height: 100%;
+}
+
+.cmp-full-width {
+  width: 100%;
+}
+
+.cmp-full-layout {
+  height: 100%;
+  width: 100%;
+}
+
+.cmp-page-layout {
+  min-width: 320px;
+  height: 100%;
+  width: 100%;
+}
+
+.cmp-animate {
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

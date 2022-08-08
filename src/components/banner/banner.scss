@@ -1,0 +1,82 @@
+@import '../../style/mixins.scss';
+
+.cmp-banner {
+  position: relative;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin-bottom: 5rem;
+
+  @include breakpoint-xs {
+    margin-bottom: 2rem;
+  }
+
+  &--background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-position: center;
+    object-fit: cover;
+  }
+
+  &--container {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn 1.5s;
+    color: #fff;
+    margin: 40px auto;
+    background-color: rgba(255,255,255,0.01);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    padding: 32px;
+    backdrop-filter: blur(10px);
+
+    @include breakpoint-xs {
+      width: 80%;
+    }
+
+    &-pretitle,
+    &-title,
+    &-description {
+      color: white;
+      // font-family: "Lucida Console", "Courier New", monospace;
+      font-weight: 200;
+      text-align: start;
+    }
+
+    &-title {
+      text-align: center;
+      font-size: 5rem;
+      font-weight: 700;
+      overflow: hidden;
+      white-space: nowrap; 
+      margin: 0 auto; 
+      letter-spacing: .15em;
+      animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end 8;
+
+      @include breakpoint-xs {
+        font-size: 3rem;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: transparent; }
+    }
+  }
+}
